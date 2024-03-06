@@ -16,7 +16,7 @@ const Nav = () => {
    <ul className=" lg:text-lg [&>*]:cursor-pointer text-xs sm:text-base flex justify-between">
     <li
      className=' hover:bg-neutral-200/20 transition-all duration-300 rounded-full p-2 flex items-center justify-center gap-1' onClick={() => {
-      navigate(`/dashboard}`);
+      navigate('/dashboard');
      }}>
      <MdDashboard />
      <span>Dashboard</span>

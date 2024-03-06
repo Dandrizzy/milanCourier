@@ -41,8 +41,8 @@ const Footer = () => {
     <div className=" ">
      <strong>Connect with us</strong>
      <ul className=' pt-2 flex  gap-6'>
-      <li><a href="tel:+12192760111"><FaPhone /></a></li>
-      <li><a href="mailto:EagleExpresses@gmail.com"><MdMail /></a></li>
+      <li><a href="tel:+13649993541"><FaPhone /></a></li>
+      <li><a href="mailto:eagleexpress_delivery@aol.com"><MdMail /></a></li>
      </ul>
      <img src="/veh.png" alt="Lgo" className=" h-20 mx-auto mt-8 bg-neutral-100 rounded-md p-1" />
     </div>
