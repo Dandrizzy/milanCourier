@@ -9,7 +9,7 @@ import { MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import { useDeleteApi } from "../Hooks/Delete/useDeleteApi";
 import { useDelete } from "../Hooks/Delete/useDelete";
-import { formatCurrency } from "../Hooks/helpers";
+import { formatCurrency, formatDate } from "../Hooks/helpers";
 import { Button } from "@radix-ui/themes";
 
 
@@ -65,8 +65,8 @@ const Ticket = () => {
     <div className="grid gap-4 ">
      <h1 className=" text-xl font-semibold">Recipient information</h1>
      <p>Ticket ID: {ticketId}</p>
-     <p>Receive date: {receiveDate}</p>
-     <p>Estimated delivery date: {deliveryDate}</p>
+     <p>Receive date: {formatDate(receiveDate)}</p>
+     <p>Estimated delivery date: {formatDate(deliveryDate)}</p>
 
     </div>
 

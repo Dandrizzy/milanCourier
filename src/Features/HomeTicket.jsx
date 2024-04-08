@@ -3,10 +3,10 @@ import { useGetSpecificApi } from "../Hooks/GetSpecific/useGetSpecificApi";
 import { useGetSpecific } from "../Hooks/GetSpecific/useGetSpecific";
 import Spinner from "../ui/Spinner";
 import { useNavigate, useParams } from "react-router-dom";
-import { formatCurrency } from "../Hooks/helpers";
+import { formatCurrency, formatDate } from "../Hooks/helpers";
 import { Button } from "@radix-ui/themes";
 import { FaMapLocationDot } from "react-icons/fa6";
-
+import { FcCheckmark, FcPaid, FcServices, FcShipped } from "react-icons/fc";
 
 const HomeTicket = () => {
 
@@ -27,8 +27,44 @@ const HomeTicket = () => {
   return (
     <>
 
-      <div className=" max-w-3xl flex flex-col justify-center mx-auto ">
-        <div className=" max-w-2xl text-neutral-900 gap-8 grid sm:grid-cols-2 p-4">
+      <div className="p-4 max-w-3xl flex flex-col justify-center mx-auto ">
+        <div className=" pb-4">
+          <h1 className="pb-4 text-xl font-semibold">Package Information</h1>
+          <div className="grid gap-4 text-neutral-900">
+            Status: {status}
+          </div>
+          <div className=" flex max-w-lg justify-between py-4">
+            <div className="grid place-items-center gap-4 text-xs">
+
+              <FcPaid className=" h-10 w-10" />
+              <p>Confirmed</p>
+            </div>
+            <div className="w-full h-1 bg-green-300 my-6 rounded-full"></div>
+
+            <div className="grid place-items-center gap-4 text-xs">
+
+              <FcServices className=" h-10 w-10" />
+              <p>Processing</p>
+            </div>
+
+            <div className="w-full h-1 bg-green-300 my-6 rounded-full"></div>
+
+            <div className="grid place-items-center gap-4 text-xs">
+
+              <FcShipped className=" h-10 w-10" />
+              <p>Dispatched</p>
+            </div>
+
+            <div className="w-full h-1 bg-green-300 my-6 rounded-full"></div>
+
+            <div className="grid place-items-center gap-4 text-xs">
+
+              <FcCheckmark className=" h-10 w-10" />
+              <p>Package Checked</p>
+            </div>
+          </div>
+        </div>
+        <div className=" max-w-2xl text-neutral-900 gap-8 grid sm:grid-cols-2 ">
           <div className="grid gap-4 ">
             <h1 className=" text-xl font-semibold">Sender&apos;s information</h1>
             <p>Name: {name}</p>
@@ -57,16 +93,14 @@ const HomeTicket = () => {
           <div className="grid gap-4 ">
             <h1 className=" text-xl font-semibold">Tracking details</h1>
             <p>Ticket ID: {ticketId}</p>
-            <p>Receive date: {receiveDate}</p>
-            <p>Estimated delivery date: {deliveryDate}</p>
+            <p>Receive date: {formatDate(receiveDate)}</p>
+            <p>Estimated delivery date: {formatDate(deliveryDate)}</p>
 
           </div>
 
 
         </div>
-        <div className="grid gap-4 text-neutral-900 p-4">
-          Status: {status}
-        </div>
+
       </div>
       <div className=" flex justify-center items-center my-6">
         <Button color="green" size='3' radius="full" onClick={() => navigate(`/customer/${ticketId}`)}>
